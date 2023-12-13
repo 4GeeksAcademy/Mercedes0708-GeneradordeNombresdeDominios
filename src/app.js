@@ -7,9 +7,9 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  let pronoun = ["the", "our"];
-  let adj = ["great", "big"];
-  let noun = ["jogger", "racoon"];
+  let pronoun = ["the","our"];
+  let adj = ["great","big"];
+  let noun = ["jogger","racoon"];
   let ext = [".com"];
 
   let domainNames = [];
@@ -17,7 +17,7 @@ window.onload = function() {
   for (let pronoun of pronoun) {
     for (let adj of adj) {
       for (let noun of noun) {
-        for (let ext of ex) {
+        for (let ext of ext) {
           domainNames.push(`${pronoun}${adj}${noun}${ext}`);
         }
       }
