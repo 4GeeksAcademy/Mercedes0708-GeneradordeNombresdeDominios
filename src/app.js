@@ -7,16 +7,25 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  let pronoun = ['the', 'our'];
-let adj = ['great', 'big'];
-let noun = ['jogger', 'racoon'];
+  let pronoun = ["the", "our"];
+  let adj = ["great", "big"];
+  let noun = ["jogger", "racoon"];
+  let ext = [".com"];
 
-string = ''
-for (let x of pronoun) {
-  for (let i of adj) {
-    for (let z of noun) {
-      string = x + i + z + '.com'
-      console.log(string);
+  let domainNames = [];
+
+  for (let pronoun of pronoun) {
+    for (let adj of adj) {
+      for (let noun of noun) {
+        for (let ext of ex) {
+          domainNames.push(`${pronoun}${adj}${noun}${ext}`);
+        }
+      }
     }
   }
+  document.querySelector("#Generate").onclick = () => {
+    document.querySelector("#Domain").innerHTML = `<h1>${
+      domainNames[Math.floor(Math.random() * domainNames.length)]
+    }</h1>`;
+  };
 };
