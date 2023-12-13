@@ -7,9 +7,9 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  let pronoun = ["the","our"];
-  let adj = ["great","big"];
-  let noun = ["jogger","racoon"];
+  let pronoun = ["the", "our"];
+  let adj = ["great", "big"];
+  let noun = ["jogger", "racoon"];
   let ext = [".com"];
 
   let domainNames = [];
