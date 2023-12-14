@@ -13,19 +13,18 @@ window.onload = function() {
   let ext = [".com"];
 
   let domainNames = [];
-
-  for (let pronoun of pronoun) {
-    for (let adj of adj) {
-      for (let noun of noun) {
-        for (let ext of ext) {
-          domainNames.push(`${pronoun}${adj}${noun}${ext}`);
+  for (let i = 0; i < pronoun.length; i++) {
+    for (let j = 0; j < adj.length; j++) {
+      for (let k = 0; k < noun.length; k++) {
+        for (let l = 0; l < ext.length; l++) {
+          let domainName = pronoun[i] + adj[j] + noun[k] + ext[l];
+          domainNames.push(domainName);
         }
       }
     }
   }
-  document.querySelector("#Generate").onclick = () => {
-    document.querySelector("#Domain").innerHTML = `<h1>${
-      domainNames[Math.floor(Math.random() * domainNames.length)]
-    }</h1>`;
-  };
+
+  for (let m = 0; m < domainNames.length; m++) {
+    console.log(domainNames[m]);
+  }
 };
