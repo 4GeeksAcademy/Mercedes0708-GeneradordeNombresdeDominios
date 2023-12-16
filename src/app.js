@@ -7,24 +7,31 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  let pronoun = ["the", "our"];
-  let adj = ["great", "big"];
-  let noun = ["jogger", "racoon"];
-  let ext = [".com"];
+  // Datos individuales de los dominios.
+  let articles = ["the", "our"];
+  let adjectives = ["great", "big"];
+  let nouns = ["jogger", "racoon"];
+  let exts = [".com"];
 
   let domainNames = [];
-  for (let i = 0; i < pronoun.length; i++) {
-    for (let j = 0; j < adj.length; j++) {
-      for (let k = 0; k < noun.length; k++) {
-        for (let l = 0; l < ext.length; l++) {
-          let domainName = pronoun[i] + adj[j] + noun[k] + ext[l];
-          domainNames.push(domainName);
+
+  for (let article of articles) {
+    for (let adjective of adjectives) {
+      for (let noun of nouns) {
+        for (let ext of exts) {
+          domainNames.push(`${article}${adjective}${noun}${exts}`);
         }
       }
     }
   }
-
-  for (let m = 0; m < domainNames.length; m++) {
-    console.log(domainNames[m]);
-  }
+  const generateButton = document.querySelector("#Generate");
+  const domainContainer = document.querySelector("#Domain");
+  generateButton.onclick = () => {
+    domainContainer.innerHTML = "<h1>Generate a domain name ...</h1>";
+    domainNames.forEach(domain => {
+      const domainElement = document.createElement("p");
+      domainElement.textContent = domain;
+      domainContainer.appendChild(domainElement);
+    });
+  };
 };
